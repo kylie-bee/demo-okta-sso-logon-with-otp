@@ -1,0 +1,532 @@
+{
+    "sign_button": {
+        "type": "browser",
+        "source": "https://id.robocorp.com//login",
+        "strategy": "xpath:inner-text",
+        "value": "//span[contains(.,'Sign in with SSO')]",
+        "element": {
+            "tag": "SPAN",
+            "type": null,
+            "modifier": null
+        },
+        "alternatives": [
+            {
+                "strategy": "css",
+                "value": ".QNFHE > .sc-kDvujY:nth-child(2)",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//div[@id='root']/div[2]/div/div[3]/div/div[2]/button/span",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//div[2]/button/span",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:inner-text",
+                "value": "//span[contains(.,'Sign in with SSO')]",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,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",
+        "name": "sign_button"
+    },
+    "subdomain": {
+        "type": "browser",
+        "source": "https://id.robocorp.com//login/realm",
+        "strategy": "name",
+        "value": "realm",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "name",
+                "value": "realm",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": ".sc-hhOBVt",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@name='realm']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//div[@id='root']/div[2]/div/div[3]/form/div/label/div/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,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",
+        "name": "subdomain"
+    },
+    "subdomain_input": {
+        "type": "browser",
+        "source": "https://id.robocorp.com//login/realm",
+        "strategy": "name",
+        "value": "realm",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "name",
+                "value": "realm",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": ".sc-hhOBVt",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@name='realm']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//div[@id='root']/div[2]/div/div[3]/form/div/label/div/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,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",
+        "name": "subdomain_input"
+    },
+    "continue_button": {
+        "type": "browser",
+        "source": "https://id.robocorp.com//login/realm",
+        "strategy": "xpath:inner-text",
+        "value": "//span[contains(.,'Continue')]",
+        "element": {
+            "tag": "SPAN",
+            "type": null,
+            "modifier": null
+        },
+        "alternatives": [
+            {
+                "strategy": "css",
+                "value": ".sc-kDvujY",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//div[@id='root']/div[2]/div/div[3]/form/button/span",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//button/span",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:inner-text",
+                "value": "//span[contains(.,'Continue')]",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAQCAYAAABAzrJtAAAAAXNSR0IArs4c6QAAAEhJREFUWEft1LERACAMAzGy/9Cm5kjhAURNpft4kuR4j8BA+YuAslwJFCjdeCpFKUrpBJTSOdkUpSilE1BK52RTlKKUTmD5dQF6zj/RORihBgAAAABJRU5ErkJggg==",
+        "name": "continue_button"
+    },
+    "okta_username": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//",
+        "strategy": "id",
+        "value": "okta-signin-username",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "okta-signin-username",
+                "matches": 1
+            },
+            {
+                "strategy": "name",
+                "value": "username",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#okta-signin-username",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='okta-signin-username']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form32']/div/div[2]/div/div[2]/span/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//span/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAAmCAYAAABUIVcIAAAAAXNSR0IArs4c6QAAATRJREFUeF7t1AEJADAMA8HNv+gMJuO5Osil5G7bcQQIEAgLXEMXblc0AgS+gKHzCAQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAECD6Mql4/Hc0QEAAAAAElFTkSuQmCC",
+        "name": "okta_username"
+    },
+    "okta_password": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//",
+        "strategy": "id",
+        "value": "okta-signin-password",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "okta-signin-password",
+                "matches": 1
+            },
+            {
+                "strategy": "name",
+                "value": "password",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#okta-signin-password",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='okta-signin-password']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form32']/div/div[2]/div[2]/div[2]/span/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//div[2]/div[2]/span/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAAmCAYAAABUIVcIAAAAAXNSR0IArs4c6QAAATRJREFUeF7t1AEJADAMA8HNv+gMJuO5Osil5G7bcQQIEAgLXEMXblc0AgS+gKHzCAQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAECD6Mql4/Hc0QEAAAAAElFTkSuQmCC",
+        "name": "okta_password"
+    },
+    "okta_sign_in_button": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//",
+        "strategy": "id",
+        "value": "okta-signin-submit",
+        "element": {
+            "tag": "INPUT",
+            "type": "submit",
+            "modifier": null
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "okta-signin-submit",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#okta-signin-submit",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='okta-signin-submit']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form32']/div[2]/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//div[2]/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAAAyCAYAAADBeGfCAAAAAXNSR0IArs4c6QAABbVJREFUeF7t231MVXUYB/DvuReQvIIw6BJgF9QwKlpaiLOt5lw5gpJWubLmH6LMobnmyrXWy5xrvWm5jDZfmsuSVWZWSKUuNxtOxbKFMkwQGFcMLgQIyAUu3HvaOSwGxeonXtTn8L1/6u/8zvN8nrvvzjn3oOm6rq/a7kHRz13w+cEPBShAAUsJhIVqyEl3oGC5E1r+No9eVNoGh9aCi4GbLNUom6EABSgQZWtElx6DhXOioSXmVemOgAd29KFFd1GHAhSggKUEYjQ3/AhFly0OmjO3WrfbBvqL9Lst1SiboQAFKNBhH7iQ8wcwEHh/kxhJyA8FKEABKwkMvXNl4FlpsmPYy1PzEpCb6UJiTLh5ls7ufvx0qgXvfVUDT1vvmJ154dw4vPjkLfj88B/44JvaMTsPN7auAAPPurMdk86yMpx45ekU1DR4seHLalzq8eOZ+YlYcE8sCg9dQHFpEz5cnYaWDh+WbiwLag0MvKByjsvNGHjjcuyjb3r1o1OxeF4CNu6pwd4jDaPfaBRHMvBGgcZDhgkw8PiFuCyBZZkurMh2YU9JA97ZXT3isTuev8v899x3yxAXPQHrlszAvbdHI8RuQ63Hi05vP7p7/eb/G2tDQ2wIsWtIS44wjyspb8XabRXo6hn+Mug/A2/f+tmobvAiJdGB5LiJ8PUH8O2xRqz7pPKyeuLi8SPAwBs/sw5Kp45wOzavTENGahTON3fjZGU7Dv7ajJLTrYP7Dw28N3JTMX9mLD79sd4MySfui8eSB6agoq5zMPDuSI5A0VEPPtrvRl6WCw/NduLNz86huNQzrOaRAi86IhQfH6zHvuMevLw4xQzNtdsrcLKqPSj9chNrCTDwrDXPq9KNEXp5WUl48O5YuJw3wKZpOOPuNK/4Tpy9aF61GZ/1u6qw5bk7UdvoRf7m0yMG4tBwNBYYobbmsWnYtLcGRcf+P/B+q+7AqzvPmnsbt9sPz3HitZ2VKP297apY8CSyBBh4suZ13VVr3LKuyE5Cztw4HD/ThlUF5YOBt/U7N95alooj5a2DoWQ0MDTkGHjX3UgtXRADz9LjDX5z0xMcmBIbbr6GMvRjPE9rbvcN3qbyCi/49tzxygUYeFduOK52MJ7JZaY7cbjsT+w4cN4MuaULbsai++Px9dFGvF5YNewKTuUZngFo/IDBW9px9VW6Js0y8K4Ju9yTGs/vns2ZiuwMJ2Iiw8xGjBeP9//ShA27q81fVv/rV1rjWV9PXwC+vsCwq0EGntzvhKTKGXiSpmWRWgtfmgVvjx95m05ZpCO2IUWAgSdlUkLrXPP4NKTPmIwtxXWorO9C/iNJ5msnuw5d4J+HCZ2p5LIZeJKnJ6D2jFuj8MKi6bjNNQl2mwZvrx/fn2jC21+c+9eLxQLaYYnCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXUBBp66FVdSgALCBRh4wgfI8ilAAXWBYYGXuLxSn+hvhg0+dNhd6rtwJQUoQAEBApF+NwIIg9d+I7Tc92v1A2VeOLQ2XNTjBZTPEilAAQqoC0RpjbikT0bmzEnQdF3X8wrq8EOZD30Bu/ouXEkBClBAgECozY/sWROwdaULfwGzyu4poB77bgAAAABJRU5ErkJggg==",
+        "name": "okta_sign_in_button"
+    },
+    "okta_otp": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//signin/verify/okta/token%3Asoftware%3Atotp",
+        "strategy": "id",
+        "value": "input80",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "input80",
+                "matches": 1
+            },
+            {
+                "strategy": "name",
+                "value": "answer",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#input80",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='input80']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form74']/div/div[2]/div/div[2]/span/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//span/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAAAnCAYAAABwv++TAAAAAXNSR0IArs4c6QAAATxJREFUeF7t1AENACAMA0HmX/RIkMHfHOzadHZ3jyNAgMDnAmPsPk/YewQIPAFjpwgECCQEjF0iZk8SIGDsdIAAgYSAsUvE7EkCBIydDhAgkBAwdomYPUmAgLHTAQIEEgLGLhGzJwkQMHY6QIBAQsDYJWL2JAECxk4HCBBICBi7RMyeJEDA2OkAAQIJAWOXiNmTBAgYOx0gQCAhYOwSMXuSAAFjpwMECCQEjF0iZk8SIGDsdIAAgYSAsUvE7EkCBIydDhAgkBAwdomYPUmAgLHTAQIEEgLGLhGzJwkQMHY6QIBAQsDYJWL2JAECxk4HCBBICBi7RMyeJEDA2OkAAQIJAWOXiNmTBAgYOx0gQCAhYOwSMXuSAAFjpwMECCQEjF0iZk8SIGDsdIAAgYSAsUvE7EkCBIydDhAgkBC4J0+bjAkjAvIAAAAASUVORK5CYII=",
+        "name": "okta_otp"
+    },
+    "okta_otp_input": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//signin/verify/okta/token%3Asoftware%3Atotp",
+        "strategy": "id",
+        "value": "input80",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "input80",
+                "matches": 1
+            },
+            {
+                "strategy": "name",
+                "value": "answer",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#input80",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='input80']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form74']/div/div[2]/div/div[2]/span/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//span/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAAAnCAYAAABwv++TAAAAAXNSR0IArs4c6QAAATxJREFUeF7t1AENACAMA0HmX/RIkMHfHOzadHZ3jyNAgMDnAmPsPk/YewQIPAFjpwgECCQEjF0iZk8SIGDsdIAAgYSAsUvE7EkCBIydDhAgkBAwdomYPUmAgLHTAQIEEgLGLhGzJwkQMHY6QIBAQsDYJWL2JAECxk4HCBBICBi7RMyeJEDA2OkAAQIJAWOXiNmTBAgYOx0gQCAhYOwSMXuSAAFjpwMECCQEjF0iZk8SIGDsdIAAgYSAsUvE7EkCBIydDhAgkBAwdomYPUmAgLHTAQIEEgLGLhGzJwkQMHY6QIBAQsDYJWL2JAECxk4HCBBICBi7RMyeJEDA2OkAAQIJAWOXiNmTBAgYOx0gQCAhYOwSMXuSAAFjpwMECCQEjF0iZk8SIGDsdIAAgYSAsUvE7EkCBIydDhAgkBC4J0+bjAkjAvIAAAAASUVORK5CYII=",
+        "name": "okta_otp_input"
+    },
+    "okta_password_input": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//",
+        "strategy": "id",
+        "value": "okta-signin-password",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "okta-signin-password",
+                "matches": 1
+            },
+            {
+                "strategy": "name",
+                "value": "password",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#okta-signin-password",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='okta-signin-password']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form32']/div/div[2]/div[2]/div[2]/span/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//div[2]/div[2]/span/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAAmCAYAAABUIVcIAAAAAXNSR0IArs4c6QAAATRJREFUeF7t1AEJADAMA8HNv+gMJuO5Osil5G7bcQQIEAgLXEMXblc0AgS+gKHzCAQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAECD6Mql4/Hc0QEAAAAAElFTkSuQmCC",
+        "name": "okta_password_input"
+    },
+    "okta_username_input": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//",
+        "strategy": "id",
+        "value": "okta-signin-username",
+        "element": {
+            "tag": "INPUT",
+            "type": "text",
+            "modifier": ""
+        },
+        "alternatives": [
+            {
+                "strategy": "id",
+                "value": "okta-signin-username",
+                "matches": 1
+            },
+            {
+                "strategy": "name",
+                "value": "username",
+                "matches": 1
+            },
+            {
+                "strategy": "css",
+                "value": "#okta-signin-username",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:attributes",
+                "value": "//input[@id='okta-signin-username']",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form32']/div/div[2]/div/div[2]/span/input",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//span/input",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAAmCAYAAABUIVcIAAAAAXNSR0IArs4c6QAAATRJREFUeF7t1AEJADAMA8HNv+gMJuO5Osil5G7bcQQIEAgLXEMXblc0AgS+gKHzCAQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAEChs4PECCQFzB0+YoFJEDA0PkBAgTyAoYuX7GABAgYOj9AgEBewNDlKxaQAAFD5wcIEMgLGLp8xQISIGDo/AABAnkBQ5evWEACBAydHyBAIC9g6PIVC0iAgKHzAwQI5AUMXb5iAQkQMHR+gACBvIChy1csIAECD6Mql4/Hc0QEAAAAAElFTkSuQmCC",
+        "name": "okta_username_input"
+    },
+    "code_label": {
+        "type": "browser",
+        "source": "https://dev-50062150.okta.com//signin/verify/okta/token%3Asoftware%3Atotp",
+        "strategy": "xpath:inner-text",
+        "value": "//label[contains(.,'Enter Code\u00a0')]",
+        "element": {
+            "tag": "LABEL",
+            "type": null,
+            "modifier": null
+        },
+        "alternatives": [
+            {
+                "strategy": "css",
+                "value": "label",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//form[@id='form74']/div/div[2]/div/div/label",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//label",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:inner-text",
+                "value": "//label[contains(.,'Enter Code\u00a0')]",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAAARCAYAAAB6mTpFAAAAAXNSR0IArs4c6QAAA5lJREFUWEftl1tIk2EYx/9Dm1OabnmRtLuWSpInEpqZaRNJTQglBB2SoeaFTOfc1OH5bBp4WoF47MIuLBQJtWWYBqahZtiV3WigeLjwgOABzcX7wtY0t30zu4l9t997+D+/93n+z/uytFqtFtbPLAGWFZRZRnSAFRQzTmCtra1p09IyMDLy8Y8p3d2v4Od3neFSZz9sYWEBbW0dGBjQYHFxESLRDcTEPEBk5D1wOByLN1xfXweJNTo6ClFR9y2arwdFgKSnSy2aTAbv7u6iuLgMLi4XTzXf2Ibj45+Rna1CXFwsJJJYODg4YHJyCgUFRRCJRFCpsmBnZ2eR3v8O1OrqKmSyTPj4eEMuz4CtrY0eyNzcPBwdHeHsfMEiSGTwPwWlW1wsvoOZmW/QaDQQCoUoLi6Eh8dVmk2dnS+p6KCg22hoqAWPx8PY2DgaG59hdPQTAgJuQipNhb+/CCwWC/X1jVhZWQWfz8Ps7HfU1FSBz+frAx8cfA+VKg/t7S3w9LxmFMjBwU/09/ejtbUd09NfERIipvv4+vrQfba3t9HU1IyurtfgcOwQHh5G9SQkPKSlRxq+KZ2GG5stPR0ogeASlEoFuNzzqK2tx9LSMsrKSuhpHy89UiIVFVXIz8+Ft7cXhVFUVAKlMpN6HgE1NPQBJSVF8PLypEEZfi0tbejr64daXQ+BQHAiKBJkb+8bdHS8QGVlOdzcXKnPVlc/pboIrObmVgwMvEV1dRVcXa9geHgEubkFyMpSUFDmdJ4IypiZC4WXqQES/9IZe09PL7q7e2j22NvbHwG1v7+Pyson4HK5kMnSKAQSFMmunZ0dKBRyqNXPqQZjnsgE1NbWFpTKHAQGBkAiiaPr6fySx3NCcnIi5HIlQkND9P8NSy8yMsKsThub3yXPOKOYgtrc3ER6upxmzPGPBFRYmEfLwRQoJqU3P/8DqalSJCUlHulgJFuXl1cQHy+BXK5ASspj/X9DUGJxsFmdhp31zEHt7e2htLScZhTJHsNT0YEjwZgCxcTM2exzf5VRERFhZnWeyqOMZRQx7rq6BmxsbCInRwk2m42JiUnqScQLgoODqKkSfwgMvAUnJyfqUaZAkX9MrgcazTt6zzqtR5E9TOk8U48i3Wpq6gtUqlwcHh5CrW6Au7vbkW5CfI5cEhMTH9GOyAQUEXnShZOUb3j4XXogZ931jus8Asr61mN2HbO+9Zhxsj6KGXKygmIK6hf8oZvsOG67BwAAAABJRU5ErkJggg==",
+        "name": "code_label"
+    },
+    "run_started_successfully_popup": {
+        "type": "browser",
+        "source": "https://eu1-acme.robocorp.com//orgrobocorp/playground/processes/53fd757f-6a7c-45a0-97d8-ef2bdb97d0d8",
+        "strategy": "xpath:inner-text",
+        "value": "//p[contains(.,'Process Run started succesfully')]",
+        "element": {
+            "tag": "P",
+            "type": null,
+            "modifier": null
+        },
+        "alternatives": [
+            {
+                "strategy": "css",
+                "value": ".kEpRST",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:relative-id",
+                "value": "//div[@id='root']/div/div/div/p",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:position",
+                "value": "//p",
+                "matches": 1
+            },
+            {
+                "strategy": "xpath:inner-text",
+                "value": "//p[contains(.,'Process Run started succesfully')]",
+                "matches": 1
+            }
+        ],
+        "screenshot": "data:image/png;base64,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",
+        "name": "run_started_successfully_popup"
+    }
+}
