@@ -18,3 +18,4 @@ This demo uses the following vault and storage configuration:
 * Storage (all optional):
     * `CONTROL_ROOM_URL`: The URL of the Control Room to log on to. Defaults to `https://cloud.robocorp.com/`. If you set this to a URL with a custom subdomain, you do not need to set `CONTROL_ROOM_SUBDOMAIN`.
     * `CONTROL_ROOM_SUBDOMAIN`: The subdomain of the Control Room to log on to. Defaults to `eu1-acme`. If you set this to a custom subdomain, you should not set `CONTROL_ROOM_URL`.
+    * `CONTROL_ROOM_PROCESS_NAME`: The name of the process to start. Defaults to `Demo`.

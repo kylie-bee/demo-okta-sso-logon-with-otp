@@ -5,6 +5,7 @@ from robocorp.tasks import task
 
 DEFAULT_URL = "https://cloud.robocorp.com/"
 DEFAULT_SUBDOMAIN = "eu1-acme"
+DEFAULT_PROCESS_NAME = "Demo"
 
 
 @task
@@ -14,10 +15,11 @@ def demo_sso_logon_to_control_room():
     otp = pyotp.TOTP(credentials["mfa_secret_key"])
     url = get_url()
     subdomain = get_subdomain()
+    demo_process_name = get_process_name()
     log.info(f"Logging into Control Room at {url} using {subdomain}.")
     page = logon_to_control_room(url, subdomain, credentials, otp)
-    log.info("Starting the demo process.")
-    start_process_by_name(page, "Demo")
+    log.info(f"Starting the {demo_process_name} process.")
+    start_process_by_name(page, demo_process_name)
     log.info("SSO login demo finished.")
 
 
@@ -60,6 +62,25 @@ def get_subdomain():
             return DEFAULT_SUBDOMAIN
 
 
+def get_process_name():
+    """Returns the name of the process to start
+    based on the value of the CONTROL_ROOM_PROCESS_NAME text storage asset.
+
+    If the asset is not found, an environment variable
+    with the same name is used.
+
+    Finally, if the environment variable is not found,
+    the default value of Demo is used.
+    """
+    try:
+        return storage.get_text("CONTROL_ROOM_PROCESS_NAME")
+    except:
+        try:
+            return os.environ["CONTROL_ROOM_PROCESS_NAME"]
+        except KeyError:
+            return DEFAULT_PROCESS_NAME
+
+
 def logon_to_control_room(
     url: str, subdomain: str, credentials: vault.SecretContainer, otp: pyotp.TOTP
 ) -> browser.Page:
@@ -70,13 +91,15 @@ def logon_to_control_room(
     page = browser.page()
     page.goto(url)
     sign_on_button = page.locator("xpath=//span[contains(.,'Sign in with SSO')]")
-    if sign_on_button.wait_for(timeout=5000):
+    okta_sign_in_button = page.locator("id=okta-signin-submit")
+    sign_on_button.or_(okta_sign_in_button).wait_for(timeout=60000)
+    if sign_on_button.is_visible():
         sign_on_button.click()
         page.fill("xpath=//*[@name='realm']", subdomain)
         page.click("xpath=//span[contains(.,'Continue')]")
     page.fill("id=okta-signin-username", credentials["email"])
     page.fill("id=okta-signin-password", credentials["password"])
-    page.click("id=okta-signin-submit")
+    okta_sign_in_button.click()
     page.fill("xpath=//*[@name='answer']", otp.now())
     page.click("xpath=//input[@value='Verify']")
     page.wait_for_selector("xpath=//h1[contains(.,'Processes')]")
