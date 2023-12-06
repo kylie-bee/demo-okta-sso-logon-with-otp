@@ -1,17 +1,20 @@
-# Template: Python - Browser automation with Playwright
+# Demo: SSO Logon to Control Room
 
-This template leverages the new python open-source structure [robo](https://github.com/robocorp/robo), the [libraries](https://github.com/robocorp/robo#libraries) from to same project as well.
+This demo robot logs onto Control Room using SSO and MFA via OTP. Once logged on it starts a demo process and waits for confirmation that it started.
 
-The template provides you with the basic structure of a Python project: logging out of the box and controlling your tasks without fiddling with the base Python stuff. The environment contains the most used libraries, so you do not have to start thinking about those right away. 
-With `robocorp-browser`, the browser automation uses Playwright without any extra steps. 
+## Pre-requisites
 
-👉 After running the bot, check out the `log.html` under the `output` -folder.
+* A Control Room with Okta SSO and MFA enabled
+* A user with SSO enabled in Control Room
 
-The template contains simple Browser automation that solves the [RPA Form Challenge](https://www.rpachallenge.com). This includes Excel data reading and interacting with a web site.
+## Vault and Storage Configuration
 
-🚀 Now, you can just get to writing.
+This demo uses the following vault and storage configuration:
 
-For more information, do not forget to checkout the following:
-* [Robocorp Documentation -site](https://robocorp.com/docs)
-* [Portal for more examples](https://robocorp.com/portal)
-* [robo repo](https://github.com/robocorp/robo) as this will developed a lot...
+* Vault: `sso_account` with the following keys:
+    * `email`: The username of the user to log on with
+    * `password`: The password of the user to log on with
+    * `mfa_secret_key`: The secret key for MFA
+* Storage (all optional):
+    * `CONTROL_ROOM_URL`: The URL of the Control Room to log on to. Defaults to `https://cloud.robocorp.com/`. If you set this to a URL with a custom subdomain, you do not need to set `CONTROL_ROOM_SUBDOMAIN`.
+    * `CONTROL_ROOM_SUBDOMAIN`: The subdomain of the Control Room to log on to. Defaults to `eu1-acme`. If you set this to a custom subdomain, you should not set `CONTROL_ROOM_URL`.

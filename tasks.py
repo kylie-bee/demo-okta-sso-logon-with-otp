@@ -69,9 +69,11 @@ def logon_to_control_room(
     """
     page = browser.page()
     page.goto(url)
-    page.click("xpath=//span[contains(.,'Sign in with SSO')]")
-    page.fill("xpath=//*[@name='realm']", subdomain)
-    page.click("xpath=//span[contains(.,'Continue')]")
+    sign_on_button = page.locator("xpath=//span[contains(.,'Sign in with SSO')]")
+    if sign_on_button.wait_for(timeout=5000):
+        sign_on_button.click()
+        page.fill("xpath=//*[@name='realm']", subdomain)
+        page.click("xpath=//span[contains(.,'Continue')]")
     page.fill("id=okta-signin-username", credentials["email"])
     page.fill("id=okta-signin-password", credentials["password"])
     page.click("id=okta-signin-submit")
